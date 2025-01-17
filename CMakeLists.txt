@@ -31,3 +31,6 @@ add_library(${PRONAME} STATIC   ${SOURCES}
 target_include_directories(${PRONAME} PUBLIC 
                             inc
 )
+# install 
+set_target_properties(${PRONAME} PROPERTIES PUBLIC_HEADER "${CMAKE_CURRENT_SOURCE_DIR}/inc/barcode.h" OUTPUT_NAME ${PRONAME})
+install(TARGETS ${PRONAME} LIBRARY ARCHIVE RUNTIME PUBLIC_HEADER)
